@@ -12,6 +12,10 @@ PROPFlow is a property maintenance management system with server-enforced role a
 6. Add demo records: `npm run db:seed --prefix server`
 7. Start both apps: `npm run dev`
 
+### Render demo deployment
+
+For a demonstration deployment without shell access, set the Render **Start Command** to `npm run start:deploy`. It applies migrations and runs the idempotent demo seed before starting the API. This creates the documented demo accounts only when they do not already exist; remove this command in a real production deployment after creating managed user accounts.
+
 Client: http://localhost:5173. API: http://localhost:5000.
 
 For schema maintenance: `npm run db:generate --prefix server`, then `npm run db:migrate --prefix server`. The generated initial migration is included under `server/drizzle/`.
